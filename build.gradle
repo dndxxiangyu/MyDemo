@@ -14,6 +14,10 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+//对放置顺序有要求。
+plugins {
+    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC14")
+}
 
 allprojects {
     repositories {
@@ -25,4 +29,11 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+
+detekt {
+    toolVersion = "1.0.0-RC14"
+    input = files("app/src/main/java")
+    config = files("detekt-config.yml")
 }
