@@ -10,6 +10,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
+        initView()
+    }
+
+    private fun initView() {
+        val fragmentManager = supportFragmentManager
+        val ft = fragmentManager.beginTransaction()
+        ft.add(android.R.id.content, MainFragment(), "haha")
+        ft.commit()
     }
 }
