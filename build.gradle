@@ -41,8 +41,7 @@ detekt {
     toolVersion = "1.0.0-RC14"
     input = files("app/src/main/java")
     config = files("default-detekt-config.yml")
-
-
+    baseline = file("my-detekt-baseline.xml")
     //修改报告文件输出文件目录
     reports {
         xml {

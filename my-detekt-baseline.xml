@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <Blacklist timestamp="1572869614574"></Blacklist>
+  <Whitelist timestamp="1572920003147">
+    <ID>MaxLineLength:MainFragment.kt$MainFragment$val fragmentList = listOf(FeedFragment(), CalendarFragment(), AppCenterFragment(), DocFragment(), ContactFragment())</ID>
+    <ID>NewLineAtEndOfFile:AppUtil.kt$com.example.mydemo.util.AppUtil.kt</ID>
+    <ID>NewLineAtEndOfFile:MainFragment.kt$com.example.mydemo.MainFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:MainFragmentAdapter.kt$com.example.MainFragmentAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:MyApplication.kt$com.example.MyApplication.kt</ID>
+    <ID>NewLineAtEndOfFile:MyLifeCycle.kt$com.example.MyLifeCycle.kt</ID>
+  </Whitelist>
+</SmellBaseline>

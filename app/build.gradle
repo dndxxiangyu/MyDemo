@@ -8,7 +8,7 @@ apply plugin: "com.vanniktech.dependency.graph.generator"
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.mydemo"
+        applicationId "com.eg.android.AlipayGphone"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1

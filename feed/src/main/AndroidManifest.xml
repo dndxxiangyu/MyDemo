@@ -1,2 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.feed"/>
+          package="com.example.feed">
+    <application>
+        <activity android:name=".OkhttpTestActivity"
+            android:process=":good"/>
+    </application>
+</manifest>
+
