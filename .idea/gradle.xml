@@ -15,9 +15,11 @@
             <option value="$PROJECT_DIR$/contact" />
             <option value="$PROJECT_DIR$/doc" />
             <option value="$PROJECT_DIR$/feed" />
+            <option value="$PROJECT_DIR$/hijack" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>

@@ -1,1 +1,1 @@
-include ':app', ':common', ':feed', ':calendar', ':appcenter', ':doc', ':contact'
+include ':app', ':common', ':feed', ':calendar', ':appcenter', ':doc', ':contact', ':hijack'
