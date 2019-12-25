@@ -1,0 +1,2 @@
+com.seu.test.extension.processors.QualifiedNameProcessor
+com.seu.test.extension.processors.NumberOfLoopsProcessor

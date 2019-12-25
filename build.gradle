@@ -23,6 +23,11 @@ plugins {
 }
 
 allprojects {
+    apply plugin: 'io.gitlab.arturbosch.detekt'
+    dependencies {
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.0.0-RC14")
+        detektPlugins project(path:':wlib', configuration:'default')
+    }
     repositories {
         google()
         jcenter()
@@ -45,7 +50,7 @@ detekt {
     //修改报告文件输出文件目录
     reports {
         xml {
-            enabled = true
+            enabled = false
             destination = file("build/reports/detekt/detekts.xml")
         }
         html {
@@ -53,5 +58,11 @@ detekt {
             destination = file("build/reports/detekt/detekts.html")
         }
     }
+}
 
+tasks.withType(io.gitlab.arturbosch.detekt.Detekt) {
+    doFirst {
+        println "haha"
+    }
+    dependsOn(":wlib:assemble")
 }

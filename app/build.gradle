@@ -37,4 +37,5 @@ dependencies {
     implementation project(':appcenter')
     implementation project(':doc')
     implementation project(':contact')
+    implementation project(':common')
 }

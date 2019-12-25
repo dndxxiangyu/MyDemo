@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/doc" />
             <option value="$PROJECT_DIR$/feed" />
             <option value="$PROJECT_DIR$/hijack" />
+            <option value="$PROJECT_DIR$/wlib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
