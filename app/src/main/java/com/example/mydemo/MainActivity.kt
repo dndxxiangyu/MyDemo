@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         Log.i("wxy1", "onBackPressed")
-        //点击back然后走到了onpause，这时候不需要打印。
+        // 点击back然后走到了onpause，这时候不需要打印。
         super.onBackPressed()
     }
 

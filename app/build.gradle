@@ -32,10 +32,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation project(':feed')
-    implementation project(':calendar')
-    implementation project(':appcenter')
-    implementation project(':doc')
-    implementation project(':contact')
+    implementation project(':biz-module:feed')
+    implementation project(':biz-module:calendar')
+    implementation project(':biz-module:appcenter')
+    implementation project(':biz-module:doc')
+    implementation project(':biz-module:contact')
     implementation project(':common')
 }

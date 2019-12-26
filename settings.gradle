@@ -1,1 +1,4 @@
-include ':app', ':common', ':feed', ':calendar', ':appcenter', ':doc', ':contact', ':hijack', ':wlib'
+include ':app', ':hijack',
+        ':biz-module:feed', ':biz-module:calendar', ':biz-module:appcenter', ':biz-module:doc', ':biz-module:contact',
+        ':extra-detekt',
+        ':common'

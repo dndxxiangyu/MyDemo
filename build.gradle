@@ -26,7 +26,7 @@ allprojects {
     apply plugin: 'io.gitlab.arturbosch.detekt'
     dependencies {
         detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.0.0-RC14")
-        detektPlugins project(path:':wlib', configuration:'default')
+        detektPlugins project(path:':extra-detekt', configuration:'default')
     }
     repositories {
         google()
@@ -64,5 +64,5 @@ tasks.withType(io.gitlab.arturbosch.detekt.Detekt) {
     doFirst {
         println "haha"
     }
-    dependsOn(":wlib:assemble")
+    dependsOn(":extra-detekt:assemble")
 }

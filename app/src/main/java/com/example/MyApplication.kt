@@ -8,7 +8,7 @@ import android.util.Log
  * author: wuxiangyu.lc
  * describe:
  */
-class MyApplication: Application() {
+class MyApplication : Application() {
     companion object {
         const val TAG = "wxy"
     }
@@ -16,6 +16,5 @@ class MyApplication: Application() {
         super.onCreate()
         Log.i(TAG, "onCreate")
         registerActivityLifecycleCallbacks(MyLifeCycle())
-
     }
 }

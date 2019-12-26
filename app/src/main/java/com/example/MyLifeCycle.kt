@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 
-
 /**
  * 创建时间：2019-11-04
  * author: wuxiangyu.lc
@@ -77,7 +76,7 @@ class MyLifeCycle : Application.ActivityLifecycleCallbacks {
             return false
         }
         val am = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-        if (Build.VERSION.SDK_INT < 21) {//5.0
+        if (Build.VERSION.SDK_INT < 21) { // 5.0
             val tasks = am.getRunningTasks(1)
             if (!tasks.isEmpty()) {
                 val topActivity = tasks[0].topActivity
@@ -96,5 +95,4 @@ class MyLifeCycle : Application.ActivityLifecycleCallbacks {
         }
         return false
     }
-
 }
