@@ -1,8 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.feed">
+    package="com.example.feed">
+
     <application>
-        <activity android:name=".OkhttpTestActivity"
-            android:process=":good"/>
+        <activity
+            android:name=".OkhttpTestActivity"
+            android:process=":good" />
+        <activity android:name="com.example.FeedActivity"></activity>
     </application>
 </manifest>
 

@@ -18,6 +18,10 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/extra-detekt" />
             <option value="$PROJECT_DIR$/hijack" />
+            <option value="$PROJECT_DIR$/smart-router" />
+            <option value="$PROJECT_DIR$/smart-router/router-annotation" />
+            <option value="$PROJECT_DIR$/smart-router/router-api" />
+            <option value="$PROJECT_DIR$/smart-router/router-apt" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
