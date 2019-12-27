@@ -1,4 +1,5 @@
-include ':app', ':hijack',
+include ':gradle-plugin:router-plugin',
+        ':app', ':hijack',
         ':biz-module:feed', ':biz-module:calendar', ':biz-module:appcenter', ':biz-module:doc', ':biz-module:contact',
         ':extra-detekt',
         ':common',
