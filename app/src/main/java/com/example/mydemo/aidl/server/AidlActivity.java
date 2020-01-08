@@ -14,6 +14,7 @@ import android.view.View;
 import com.example.mydemo.R;
 import com.example.mydemo.aidl.Book;
 import com.example.mydemo.aidl.IBookManager;
+import com.example.mydemo.aidl.INewBookListener;
 
 import java.util.List;
 
@@ -23,6 +24,18 @@ import java.util.List;
  * describe:
  */
 public class AidlActivity extends AppCompatActivity {
+    IBookManager bookManager;
+    private INewBookListener listener = new INewBookListener() {
+        @Override
+        public void onNewBookArrived(Book newBook) throws RemoteException {
+
+        }
+
+        @Override
+        public IBinder asBinder() {
+            return null;
+        }
+    };
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +43,18 @@ public class AidlActivity extends AppCompatActivity {
         findViewById(R.id.btnRegister).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (bookManager != null) {
+                    try {
+                        bookManager.registerListener(new INewBookListener.Stub() {
+                            @Override
+                            public void onNewBookArrived(Book newBook) throws RemoteException {
+                                Log.e("AIDL", "add book---->book:" + newBook.toString());
+                            }
+                        });
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         });
         findViewById(R.id.btnUnRegister).setOnClickListener(new View.OnClickListener() {
@@ -43,6 +67,14 @@ public class AidlActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                // 添加书籍
+                try {
+                    if (bookManager != null) {
+                        bookManager.addBook(new Book(3, "book3"));
+                    }
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
             }
         });
         findViewById(R.id.btnBinder).setOnClickListener(new View.OnClickListener() {
@@ -64,9 +96,10 @@ public class AidlActivity extends AppCompatActivity {
     private ServiceConnection cnn = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            IBookManager bookManager = IBookManager.Stub.asInterface(service);
+            bookManager = IBookManager.Stub.asInterface(service);
             try {
                 // 添加书籍
+                Log.e("AIDL", "---->book:" + Thread.currentThread().getName());
                 bookManager.addBook(new Book(3, "book3"));
             } catch (RemoteException e) {
                 e.printStackTrace();
