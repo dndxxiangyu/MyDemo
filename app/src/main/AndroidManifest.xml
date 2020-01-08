@@ -19,7 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".aidl.server.AidlActivity"/>
 
+        <activity android:name=".SecondActivity"
+            android:process=":haha"/>
+
+        <service android:name=".aidl.server.BookManagerService"
+            android:process=":haha"
+            android:exported="true"/>
     </application>
 
 </manifest>

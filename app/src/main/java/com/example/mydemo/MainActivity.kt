@@ -1,10 +1,11 @@
 package com.example.mydemo
 
-import android.app.ActivityManager
-import android.content.Context
-import android.support.v7.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.support.v7.app.AppCompatActivity
+import com.example.RouteBean
+import com.example.mydemo.aidl.server.AidlActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * MainActivity is missing required documentation.
@@ -13,9 +14,28 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-        initView()
-        Log.i("wxy1", "onCreate")
+        setContentView(R.layout.activity_main)
+//        initView()
+        tvSecondActivity.setOnClickListener {
+            val intent = Intent().apply {
+                this.setClass(this@MainActivity, SecondActivity::class.java)
+                val bean = RouteBean().apply {
+                    this.name = "haha"
+                    this.keyword = "keyword"
+                    this.pageName = "pageName"
+                }
+                this.putExtra("key", bean)
+            }
+            startActivity(intent)
+
+        }
+        tvAidlActivity.setOnClickListener {
+            val intent = Intent().apply {
+                this.setClass(this@MainActivity, AidlActivity::class.java)
+            }
+            startActivity(intent)
+
+        }
     }
 
     private fun initView() {
@@ -23,29 +43,5 @@ class MainActivity : AppCompatActivity() {
         val ft = fragmentManager.beginTransaction()
         ft.add(android.R.id.content, MainFragment(), "haha")
         ft.commit()
-    }
-
-    override fun onStop() {
-        Log.i("wxy1", "onStop")
-        super.onStop()
-    }
-
-    override fun onPause() {
-        val manager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-        val currentClassName = manager.getRunningTasks(1).get(0).topActivity.getPackageName()
-        Log.i("wxy1", currentClassName)
-        Log.i("wxy1", "onPause")
-        super.onPause()
-    }
-
-    override fun onBackPressed() {
-        Log.i("wxy1", "onBackPressed")
-        // 点击back然后走到了onpause，这时候不需要打印。
-        super.onBackPressed()
-    }
-
-    override fun finish() {
-        Log.i("wxy1", "finish")
-        super.finish()
     }
 }
