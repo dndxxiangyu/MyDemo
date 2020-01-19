@@ -11,9 +11,11 @@ import android.util.Log
 class MyApplication : Application() {
     companion object {
         const val TAG = "wxy"
+        var mApp: Application? = null;
     }
     override fun onCreate() {
         super.onCreate()
+        mApp = this;
         Log.i(TAG, "onCreate")
         registerActivityLifecycleCallbacks(MyLifeCycle())
     }

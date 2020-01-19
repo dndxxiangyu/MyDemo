@@ -21,8 +21,14 @@
         </activity>
         <activity android:name=".aidl.server.AidlActivity"/>
 
-        <activity android:name=".SecondActivity"
-            android:process=":haha"/>
+        <activity android:name=".task.SecondActivity"
+            android:taskAffinity=".MiniAppUI0"
+            android:process=":miniapp0"
+            android:launchMode="singleTask"/>
+
+
+        <activity android:name=".task.ThirdActivity"
+            android:launchMode="singleTask"/>
 
         <service android:name=".aidl.server.BookManagerService"
             android:process=":haha"

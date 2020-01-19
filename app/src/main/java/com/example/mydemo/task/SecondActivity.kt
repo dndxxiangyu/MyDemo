@@ -1,9 +1,9 @@
-package com.example.mydemo
+package com.example.mydemo.task
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.example.RouteBean
-import com.example.RouteBeanCopy
+import com.example.mydemo.R
 import kotlinx.android.synthetic.main.activity_second.*
 
 /**
@@ -18,9 +18,18 @@ class SecondActivity : AppCompatActivity() {
     }
 
     private fun parseIntent() {
-        val bean = intent.getParcelableExtra<RouteBeanCopy>("key")
-        bean?.let {
-            tvSecond.setText(bean.name)
+
+//        val bean = intent.getParcelableExtra<RouteBeanCopy>("key")
+//        bean?.let {
+//            tvSecond.setText(bean.name)
+//        }
+
+        tvSecond.setOnClickListener {
+
+            val intent = Intent()
+            intent.setClass(this@SecondActivity, ThirdActivity::class.java)
+            startActivity(intent)
         }
+        tvSecond.setText("second activity")
     }
 }

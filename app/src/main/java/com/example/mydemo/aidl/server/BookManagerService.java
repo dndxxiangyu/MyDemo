@@ -3,6 +3,7 @@ package com.example.mydemo.aidl.server;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.os.Parcel;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
@@ -27,6 +28,12 @@ public class BookManagerService extends Service {
         @Override
         public List<Book> getBookList() throws RemoteException {
             return mBookList;
+        }
+
+        @Override
+        public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
+            getCallingUid();
+            return super.onTransact(code, data, reply, flags);
         }
 
         @Override

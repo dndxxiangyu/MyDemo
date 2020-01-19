@@ -3,6 +3,7 @@ package com.example.mydemo.aidl.server;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -121,4 +122,9 @@ public class AidlActivity extends AppCompatActivity {
 
         }
     };
+
+    @Override
+    public Resources getResources() {
+        return super.getResources();
+    }
 }
