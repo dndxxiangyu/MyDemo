@@ -7,6 +7,7 @@ import android.util.Log
 import com.example.RouteBean
 import com.example.mydemo.aidl.server.AidlActivity
 import com.example.mydemo.task.SecondActivity
+import com.example.mydemo.webview.WebViewActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -15,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.e("wxy", "onCreate")
+        Log.e("A", "onCreate")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 //        initView()
@@ -39,6 +40,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+        tvWebView.setOnClickListener {
+            val intent = Intent().apply {
+                this.setClass(this@MainActivity, WebViewActivity::class.java)
+            }
+            startActivity(intent)
+        }
     }
 
     private fun initView() {
@@ -50,16 +57,31 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        Log.e("wxy", "onResume")
+        Log.e("A", "onResume")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.e("wxy", "onRestart")
+        Log.e("A", "onRestart")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e("A", "onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.e("wxy", "onStop")
+        Log.e("A", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("A", "onDestroy")
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        Log.e("A", "onNewIntent")
     }
 }
